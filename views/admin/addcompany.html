@@ -1,0 +1,141 @@
+<div class=" container-fluid">
+           <!-- row -->
+           <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">{{Translate[lang].Text_addcompany}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="form-valide"  ng-submit="addcompany(companyform)">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">{{Translate[lang].Text_companyName}}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input  ng-model="companyform.companyName" type="text" class="form-control" id="val-username" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-email">{{Translate[lang].Text_companyactivity}} <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-email" ng-model="companyform.comActivity"required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-password">{{Translate[lang].Text_companyRegNo}}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="number" class="form-control" id="val-password"  ng-model="companyform.comRegNo" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">{{Translate[lang].Text_companyTaxcard}}<span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="number" class="form-control" id="val-confirm-password"  ng-model="companyform.taxCard" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-suggestions">{{Translate[lang].Text_companyAddress}} <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="form-control" id="val-suggestions"  ng-model="companyform.address" rows="5" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">{{Translate[lang].Text_phone}}<span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-confirm-password"  ng-model="companyform.phoneNumber" required>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="col-xl-6">
+                                   
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">{{Translate[lang].Text_mobilephone}}<span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-confirm-password"  ng-model="companyform.landNumber" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">{{Translate[lang].Text_Email}}<span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-confirm-password"  ng-model="companyform.email" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">{{Translate[lang].Text_website}} <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-confirm-password" ng-model="companyform.website" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-confirm-password">{{Translate[lang].Text_logo}}<span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-confirm-password"  ng-model="companyform.logo" required>
+                                            </div>
+                                        </div>
+                             
+                                
+                           
+                               
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">{{Translate[lang].Text_curreny}}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control default-select" id="val-skill"  ng-model="companyform.currencyId">
+                                                    <option value="">Please select</option>
+                                                    <option  ng-repeat="item in currencies track by $index" ng-value="item.id">{{item.currencyName}}</option>
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">{{Translate[lang].Text_country}}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control default-select" id="val-skill"  ng-model="companyform.country">
+                                                    <option value="">Please select</option>
+                                                    <option value="Egypt">Egypt</option>
+                                                    <option value="Suadi Arabia">Suadi Arabia</option>
+                               
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                    <button type="submit" class=" btn btn-success m-auto" ng-disabled="companyform.$invalid">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     
+        </div>
+</div>

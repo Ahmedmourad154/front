@@ -1,0 +1,65 @@
+<div class=" container-fluid" >
+    <div class="row">
+        <div class="col-12">
+            <div class="card" >
+                <div class="card-header">
+                    <h4 class="card-title">{{Translate[lang].TEXT_EDITBRANCHINFO}}</h4>
+                </div>
+                <div class="card-body" >
+                    <div class="basic-form">
+                        <form   ng-submit="updatebranch(editbranch)">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">{{Translate[lang].Text_branchName}}<span ng-model="test"></span></label>
+                                <div class="col-sm-9">
+                                    <input type="text" class=" form-control"   ng-model="editbranch.branchName">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">{{Translate[lang].Text_companyAddress}}</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class=" form-control" ng-model="editbranch.address">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">{{Translate[lang].Text_mobilephone}}</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class=" form-control" ng-model="editbranch.phoneNumber">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label"> {{Translate[lang].Text_phone}}</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class=" form-control" ng-model="editbranch.landNumber">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">{{Translate[lang].Text_Email}}</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class=" form-control" ng-model="editbranch.email">
+                                </div>
+                            </div>
+                      
+
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-danger" ng-disabled="editbranch.$pristine">{{Translate[lang].UPDATE}}</button>
+                                    <a ui-sref="menu.branches" class=" btn btn-success">{{Translate[lang].CANCEL}}</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+

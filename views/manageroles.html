@@ -1,0 +1,41 @@
+<form ng-submit="updatePermission(permissions)">
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>{{permissions.roleName}}</h2>
+            {{Translate[lang].Text_AddAndDeletePermission}}
+        </div>
+        <div class="card-body">
+            <input type="hidden" ng-model="permissions.roleId" />
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+
+                        <th>  {{Translate[lang].Text_Module}}</th>
+                        <th>{{Translate[lang].Text_PermissionModule}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                        <tr ng-repeat="permission in permissions.roleClaims">
+                            <td>
+                                <div class="form-check m-1">
+                                    <input type="hidden" ng-model="permission.displayValue" />
+                                    <input type="checkbox" ng-model="permission.isSelected" class="form-check-input" style="margin-top:-10px"/>
+                                 
+                                </div>
+                            </td>
+                            <td>{{permission.displayValue.split('.')[1]}}</td>
+                            <td>{{permission.displayValue.split('.')[2]}}</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">{{Translate[lang].TEXT_SAVE}}</button>
+            <a href="#/menu/roles" class="btn btn-secondary">{{Translate[lang].TEXT_CANCEL}}</a>
+        </div>
+    </div>
+</form>

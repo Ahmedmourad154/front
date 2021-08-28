@@ -1,0 +1,70 @@
+<div class=" container-fluid">
+    <!-- row -->
+    <div class="row">
+     <div class="col-lg-12">
+         <div class="card">
+             <div class="card-header">
+                 <h4 class="card-title">{{Translate[lang].Text_addbranch}}</h4>
+             </div>
+             <div class="card-body">
+                 <div class="form-validation">
+                     <form class="form-valide"  ng-submit="addbranch(branchform)">
+                         <div class="row">
+                             <div class="col-xl-6 m-auto">
+                                 <div class="form-group row">
+                                     <label class="col-lg-4 col-form-label" for="val-username">{{Translate[lang].Text_branchName}}
+                                         <span class="text-danger">*</span>
+                                     </label>
+                                     <div class="col-lg-6">
+                                         <input  ng-model="branchform.branchName" type="text" class="form-control" id="val-username" required>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     <label class="col-lg-4 col-form-label" for="val-email">{{Translate[lang]. Text_companyAddress}} <span
+                                             class="text-danger">*</span>
+                                     </label>
+                                     <div class="col-lg-6">
+                                     
+                                         <textarea class="form-control" id="val-suggestions"  ng-model="branchform.address "rows="5" required></textarea>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     <label class="col-lg-4 col-form-label" for="val-password">{{Translate[lang].Text_mobilephone}}
+                                         <span class="text-danger">*</span>
+                                     </label>
+                                     <div class="col-lg-6">
+                                         <input type="text" class="form-control" id="val-password"  ng-model="branchform.phoneNumber" required>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     <label class="col-lg-4 col-form-label" for="val-confirm-password">{{Translate[lang].Text_phone}}<span
+                                             class="text-danger">*</span>
+                                     </label>
+                                     <div class="col-lg-6">
+                                         <input type="text" class="form-control" id="val-confirm-password"  ng-model="branchform.landNumber" required>
+                                     </div>
+                                 </div>
+                                 <div class="form-group row">
+                                     <label class="col-lg-4 col-form-label" for="val-suggestions">{{Translate[lang].Text_Email}} <span
+                                             class="text-danger">*</span>
+                                     </label>
+                                     <div class="col-lg-6">
+                                        <input type="text" class="form-control" id="val-email" ng-model="branchform.email"required>
+                                     </div>
+                                    
+                                 </div>
+                                 <button type="submit" class=" btn btn-success " ng-disabled="branchform.$invalid">Add</button>
+                               
+                             </div>
+
+                           
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+ </div>
+</div>
+

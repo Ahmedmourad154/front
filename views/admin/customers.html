@@ -1,0 +1,121 @@
+
+<div class="container-fluid">
+    <div class="nk-content-inner">
+        <div class="nk-content-body">
+            <div class="nk-block-head nk-block-head-sm">
+                <div class="nk-block-between">
+                    <div class="nk-block-head-content">
+                        <h3 class="nk-block-title page-title">{{Translate[lang].TEXT_CUSTOMERS}}</h3>
+                        <div class="nk-block-des text-soft">
+                            <p >{{Translate[lang].TEXT_EXIST}} <span class=" text-success">{{customerData.length}}</span>{{Translate[lang].TEXT_Customer}}.</p>
+                        </div>
+                    </div>
+                    <!-- .nk-block-head-content -->
+                    <div class="nk-block-head-content">
+                        <div class="toggle-wrap nk-block-tools-toggle">
+                            <a class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
+                            <div class="toggle-expand-content" data-content="pageMenu">
+                                <ul class="nk-block-tools g-3">
+                                    <li><a class="btn btn-white btn-outline-light"><em class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
+                                    <li class="nk-block-tools-opt">
+                                        <a ui-sref="menu.addCustomer" class=" btn btn-info"><span><i class=" icon ni ni-user-add"></i></span></a>
+        
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- .toggle-wrap -->
+                    </div>
+                    <!-- .nk-block-head-content -->
+                </div>
+                <!-- .nk-block-between -->
+            </div>
+            <!-- .nk-block-head -->
+            <div class="nk-block">
+                <div class="card card-bordered card-stretch">
+                    <div class="card-inner-group">
+                        <div class="card-inner position-relative card-tools-toggle">
+                            <div class="card-title-group">
+                                
+                                <!-- .card-tools -->
+                                
+                                <!-- .card-tools -->
+                            </div>
+                            <!-- .card-title-group -->
+                            
+                            <!-- .card-search -->
+                        </div>
+                        <!-- .card-inner -->
+                        <div class="card-inner p-0">
+                            <div class="nk-tb-list nk-tb-ulist is-compact">
+                                <div class="nk-tb-item nk-tb-head">
+                               
+                                    <div class="nk-tb-col tb-col-md"><span class="sub-text">{{Translate[lang].TEXT_CustomerName}}</span></div>
+                                    <div class="nk-tb-col tb-col-sm"><span class="sub-text">{{Translate[lang].Text_Email}}</span></div>
+                                    <div class="nk-tb-col tb-col-md"><span class="sub-text">{{Translate[lang].Text_mobilephone}}</span></div>
+                                    <div class="nk-tb-col tb-col-md"><span class="sub-text">{{Translate[lang]. TEXT_HomeMobile}}</span></div>
+                                    <div class="nk-tb-col tb-col-md"><span class="sub-text">{{Translate[lang]. Text_Address}}</span></div>
+                                    <div class="nk-tb-col tb-col-md"><span class="sub-text">{{Translate[lang].Text_Balance}}</span></div>
+                                    <div class="nk-tb-col nk-tb-col-tools text-right">
+                                        
+                                    </div>
+                                </div>
+                                <!-- .nk-tb-item -->
+                                <div class="nk-tb-item" ng-repeat="item in customerData" >
+                                  
+                                    <div class="nk-tb-col">
+                                        <div class="user-card">
+                                           
+                                            <div class="user-name">
+                                                <span class="tb-lead">{{item.personName}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                              
+                                    <div class="nk-tb-col tb-col-sm">
+                                        <span>{{item.email}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md">
+                                        <span>{{item.phoneNumber}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md">
+                                        <span>{{item.homeMobile}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md">
+                                        <span>{{item.address}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md">
+                                        <span>{{item.currentBalance}}</span>
+                                    </div>
+                                  
+                                    <a ng-click="filldata(item)" class="text-warning"><span ><i class="icon ni ni-pen2 "></i></span></a>
+
+                                </div>
+ 
+                                <!-- .nk-tb-item -->
+                            </div>
+                            <!-- .nk-tb-list -->
+                        </div>
+                        <!-- .card-inner -->
+                        <div class="card-inner">
+                            <ul class="pagination justify-content-center justify-content-md-start">
+                                <li class="page-item"><a class="page-link">Prev</a></li>
+                                <li class="page-item"><a class="page-link">1</a></li>
+                                <li class="page-item"><a class="page-link">2</a></li>
+                                <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
+                                <li class="page-item"><a class="page-link">6</a></li>
+                                <li class="page-item"><a class="page-link">7</a></li>
+                                <li class="page-item"><a class="page-link">Next</a></li>
+                            </ul>
+                            <!-- .pagination -->
+                        </div>
+                        <!-- .card-inner -->
+                    </div>
+                    <!-- .card-inner-group -->
+                </div>
+                <!-- .card -->
+            </div>
+            <!-- .nk-block -->
+        </div>
+    </div>
+</div>

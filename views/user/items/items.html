@@ -1,0 +1,466 @@
+
+
+
+
+
+<div class="container-fluid">
+    <div class="nk-content-inner">
+        <div class="nk-content-body">
+            <div class="nk-block-head nk-block-head-sm">
+                <div class="nk-block-between">
+                    <div class="nk-block-head-content">
+                        <h3 class="nk-block-title page-title">قائمه الاصناف</h3>
+                        <div class="nk-block-des text-soft">
+                            <p >You have total <span class=" text-success">{{products.length}}</span> Items</p>
+                        </div>
+                    </div>
+                    <!-- .nk-block-head-content -->
+                    <div class="nk-block-head-content">
+                        <div class="toggle-wrap nk-block-tools-toggle">
+                            <a class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
+                            <div class="toggle-expand-content" data-content="pageMenu">
+                                <ul class="nk-block-tools g-3">
+                                    <li><a class="btn btn-white btn-outline-light"><em class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
+                                    <li class="nk-block-tools-opt">
+                                        <a ui-sref="menu.additem" class=" btn btn-info"><span><i class=" icon ni ni-plus"></i></span></a>
+                            
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- .toggle-wrap -->
+                    </div>
+                    <!-- .nk-block-head-content -->
+                </div>
+                <!-- .nk-block-between -->
+            </div>
+            <!-- .nk-block-head -->
+            <div class="nk-block">
+                <div class="card card-bordered card-stretch">
+                    <div class="card-inner-group">
+                        <div class="card-inner position-relative card-tools-toggle">
+                            <div class="card-title-group">
+                                <div class="card-tools">
+                                    <div class="form-inline flex-nowrap gx-3">
+                                        <div class="form-wrap w-150px">
+                                            <select class="form-select form-select-sm" data-search="on" data-placeholder="Bulk Action">
+                                                <option value="">Bulk Action</option>
+                                                <option value="email">Send Email</option>
+                                                <option value="group">Change Group</option>
+                                                <option value="suspend">Suspend User</option>
+                                                <option value="delete">Delete User</option>
+                                            </select>
+                                        </div>
+                                        <div class="btn-wrap">
+                                            <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light disabled">Apply</button></span>
+                                            <span class="d-md-none"><button class="btn btn-dim btn-outline-light btn-icon disabled"><em class="icon ni ni-arrow-right"></em></button></span>
+                                        </div>
+                                    </div>
+                                    <!-- .form-inline -->
+                                </div>
+                                <!-- .card-tools -->
+                                <div class="card-tools mr-n1">
+                                    <ul class="btn-toolbar gx-1">                                                        
+                                        <li>
+                                            <a class="btn btn-icon search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a>
+                                        </li>
+                                        <!-- li -->
+                                        <li class="btn-toolbar-sep"></li>
+                                        <!-- li -->
+                                        <li>
+                                            <div class="toggle-wrap">
+                                                <a class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-menu-right"></em></a>
+                                                <div class="toggle-content" data-content="cardTools">
+                                                    <ul class="btn-toolbar gx-1">
+                                                        <li class="toggle-close">
+                                                            <a class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-arrow-left"></em></a>
+                                                        </li>
+                                                        <!-- li -->
+                                                        <li>
+                                                            <div class="dropdown">
+                                                                <a class="btn btn-trigger btn-icon dropdown-toggle" data-toggle="dropdown">
+                                                                    <div class="dot dot-primary"></div>
+                                                                    <em class="icon ni ni-filter-alt"></em>
+                                                                </a>
+                                                                <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-right">
+                                                                    <div class="dropdown-head">
+                                                                        <span class="sub-title dropdown-title">Filter Users</span>
+                                                                        <div class="dropdown">
+                                                                            <a class="btn btn-sm btn-icon">
+                                                                                <em class="icon ni ni-more-h"></em>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="dropdown-body dropdown-body-rg">
+                                                                        <div class="row gx-6 gy-3">
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="productName" ng-model="check.productName">
+                                                                                    <label class="custom-control-label" for="productName"> productName</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="description" ng-model="check.description">
+                                                                                    <label class="custom-control-label" for="description"> description</label>
+                                                                                </div>
+                                                                            </div> -->
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="productionDate" ng-model="check.productionDate">
+                                                                                    <label class="custom-control-label" for="productionDate">productionDate</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="expirationDate" ng-model="check.expirationDate">
+                                                                                    <label class="custom-control-label" for="expirationDate">expirationDate</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="units" ng-model="check.units">
+                                                                                    <label class="custom-control-label" for="units">units</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="defaultSelling" ng-model="check.defaultSelling">
+                                                                                    <label class="custom-control-label" for="defaultSelling">defaultSelling</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="defaultPurchasing" ng-model="check.defaultPurchasing">
+                                                                                    <label class="custom-control-label" for="defaultPurchasing">defaultPurchasing</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="category" ng-model="check.category">
+                                                                                    <label class="custom-control-label" for="category">category</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="store" ng-model="check.store">
+                                                                                    <label class="custom-control-label" for="store">store</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="stock" ng-model="check.stock">
+                                                                                    <label class="custom-control-label" for="stock">stock</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="demandLimit" ng-model="check.demandLimit">
+                                                                                    <label class="custom-control-label" for="demandLimit">demandLimit</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="productCode" ng-model="check.productCode">
+                                                                                    <label class="custom-control-label" for="productCode">productCode</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="size" ng-model="check.size">
+                                                                                    <label class="custom-control-label" for="size">size</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="amount" ng-model="check.amount">
+                                                                                    <label class="custom-control-label" for="amount">amount</label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-6">
+                                                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                                                    <input type="checkbox" class="custom-control-input" id="unitFirstStock" ng-model="check.unitFirstStock">
+                                                                                    <label class="custom-control-label" for="unitFirstStock">unitFirstStock</label>
+                                                                                </div>
+                                                                            </div>
+                                                                    
+                                                                      
+                                                                   
+                                                                        
+                                                                        </div>
+                                                                    </div>
+                                                                  
+                                                                </div>
+                                                                <!-- .filter-wg -->
+                                                            </div>
+                                                            <!-- .dropdown -->
+                                                        </li>
+                                                        <!-- li -->
+                                                        <li>
+                                                            <div class="dropdown">
+                                                                <a class="btn btn-trigger btn-icon dropdown-toggle" data-toggle="dropdown">
+                                                                    <em class="icon ni ni-setting"></em>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-xs dropdown-menu-right">
+                                                                    <ul class="link-check">
+                                                                        <li><span>Show</span></li>
+                                                                        <li class="active"><a>10</a></li>
+                                                                        <li><a>20</a></li>
+                                                                        <li><a>50</a></li>
+                                                                    </ul>
+                                                                    <ul class="link-check">
+                                                                        <li><span>Order</span></li>
+                                                                        <li class="active"><a>DESC</a></li>
+                                                                        <li><a>ASC</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <!-- .dropdown -->
+                                                        </li>
+                                                        <!-- li -->
+                                                    </ul>
+                                                    <!-- .btn-toolbar -->
+                                                </div>
+                                                <!-- .toggle-content -->
+                                            </div>
+                                            <!-- .toggle-wrap -->
+                                        </li>
+                                        <!-- li -->
+                                    </ul>
+                                    <!-- .btn-toolbar -->
+                                </div>
+                                <!-- .card-tools -->
+                            </div>
+                            <!-- .card-title-group -->
+                            <div class="card-search search-wrap" data-search="search">
+                                <div class="card-body">
+                                    <div class="search-content">
+                                        <a class="search-back btn btn-icon toggle-search" data-target="search" ng-click='makeActive("search")' ng-class="{ 'active': active=='search'}"><em class="icon ni ni-arrow-left"></em></a>
+                                        <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by user or email">
+                                        <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .card-search -->
+                        </div>
+                        <!-- .card-inner -->
+                        <div class="card-inner p-0">
+                            <div class="nk-tb-list nk-tb-ulist is-compact">
+                                <div class="nk-tb-item nk-tb-head">
+                               
+                                    <div class="nk-tb-col"><span class="sub-text"></span></div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.productName"><span class="sub-text">{{Translate[lang].TEXT_PRODUCTNAME}}</span></div>
+                                    <div class="nk-tb-col tb-col-sm" ng-if="check.productionDate"><span class="sub-text">{{Translate[lang].productionDate}}</span></div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.expirationDate"><span class="sub-text">{{Translate[lang].expirationDate}}</span></div>
+                                    <div class="nk-tb-col tb-col-lg" ng-if="check.units"><span class="sub-text">{{Translate[lang].units}}</span></div>               
+                                    <div class="nk-tb-col" ng-if="check.store"><span class="sub-text">{{Translate[lang].store}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.category"><span class="sub-text">{{Translate[lang].category}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.stock"><span class="sub-text">{{Translate[lang].stock}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.demandLimit"><span class="sub-text">{{Translate[lang].demandLimit}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.productCode"><span class="sub-text">{{Translate[lang].TEXT_PRODUCTCODE}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.size"><span class="sub-text">{{Translate[lang].size}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.amount"><span class="sub-text">{{Translate[lang].balanceCost}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.unitFirstStock"><span class="sub-text">{{Translate[lang].balanceUnit}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.defaultSelling"><span class="sub-text">{{Translate[lang].defaultSelling}}</span></div>
+                                    <div class="nk-tb-col" ng-if="check.defaultPurchasing"><span class="sub-text">{{Translate[lang].defaultPurchasing}}</span></div>
+                              
+                                    <div class="nk-tb-col nk-tb-col-tools text-right">
+                                        <div class="dropdown">
+                                            <a class="btn btn-xs btn-outline-light btn-icon dropdown-toggle" data-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-plus"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-xs dropdown-menu-right">
+                                                <ul class="link-tidy sm no-bdr">
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="productName" ng-model="check.productName">
+                                                                                    <label class="custom-control-label" for="productName"> {{Translate[lang].TEXT_PRODUCTNAME}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <!-- <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="description" ng-model="check.description">
+                                                            <label class="custom-control-label" for="description"> description</label>
+                                                        </div>
+                                                    </li> -->
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="productionDate" ng-model="check.productionDate">
+                                                            <label class="custom-control-label" for="productionDate">{{Translate[lang].productionDate}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="expirationDate" ng-model="check.expirationDate">
+                                                            <label class="custom-control-label" for="expirationDate">{{Translate[lang].expirationDate}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="units" ng-model="check.units">
+                                                            <label class="custom-control-label" for="units">{{Translate[lang].units}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="defaultSelling" ng-model="check.defaultSelling">
+                                                            <label class="custom-control-label" for="defaultSelling">{{Translate[lang].defaultSelling}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="defaultPurchasing" ng-model="check.defaultPurchasing">
+                                                            <label class="custom-control-label" for="defaultPurchasing">{{Translate[lang].defaultPurchasing}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="category" ng-model="check.category">
+                                                            <label class="custom-control-label" for="category">{{Translate[lang].category}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="store" ng-model="check.store">
+                                                            <label class="custom-control-label" for="store">{{Translate[lang].store}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="stock" ng-model="check.stock">
+                                                            <label class="custom-control-label" for="stock">{{Translate[lang].stock}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="demandLimit" ng-model="check.demandLimit">
+                                                            <label class="custom-control-label" for="demandLimit">{{Translate[lang].demandLimit}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="productCode" ng-model="check.productCode">
+                                                            <label class="custom-control-label" for="productCode">{{Translate[lang].TEXT_PRODUCTCODE}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="size" ng-model="check.size">
+                                                            <label class="custom-control-label" for="size">{{Translate[lang].size}}</label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="amount" ng-model="check.amount">
+                                                            <label class="custom-control-label" for="amount">{{Translate[lang].balanceCost}} </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="unitFirstStock" ng-model="check.unitFirstStock">
+                                                            <label class="custom-control-label" for="unitFirstStock">{{Translate[lang].balanceUnit}}</label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .nk-tb-item -->
+                                <div class="nk-tb-item" ng-repeat="item in products track by $index"  >
+                                    <div class="nk-tb-col nk-tb-col-check">
+                                      {{$index+1}}
+                                    </div>
+                                    <div class="nk-tb-col" ng-if="check.productName">
+                                       
+                                            <div class="user-name">
+                                                <span class="tb-lead">{{item.productName}}</span>
+                                            </div>
+                                      
+                                    </div>
+                              
+                                    <div class="nk-tb-col tb-col-sm" ng-if="check.productionDate">
+                                        <span>{{item.productionDate | date:"dd/mm/yy"}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.expirationDate">
+                                        <span>{{item.expirationDate | date:"dd/mm/yy"}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-sm" ng-if="check.units">
+                                        <div ng-repeat="item2 in item.units track by $index">
+                                            <span>{{item2.unitName}}</span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.store">
+                                        <span>{{item.store.storeName}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.category">
+                                        <span>{{item.category.categoryName}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.stock">
+                                        <span>{{item.stock}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.demandLimit">
+                                        <span>{{item.demandLimit}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.productCode">
+                                        <span>{{item.productCode}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.size">
+                                        <span>{{item.size}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.amount">
+                                        <span>{{item.amount}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.unitFirstStock">
+                                        <span>{{item.unitFirstStock}}</span>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.defaultSelling">
+                                        <div ng-repeat="item2 in item.units track by $index">
+                                            <span ng-if="item2.defaultSelling">{{item2.unitName}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="nk-tb-col tb-col-md" ng-if="check.defaultPurchasing">
+                                        <div ng-repeat="item2 in item.units track by $index">
+                                            <span ng-if="item2.defaultPurchasing">{{item2.unitName}}</span>
+                                        </div>
+                                    </div>
+                         
+                                    <div class="nk-tb-col nk-tb-col-tools">
+                                        <ul class="nk-tb-actions gx-2">
+
+                                            <li class="nk-tb-action-hidden">
+                                                <a ng-click="filldata(item)" class="btn btn-sm btn-icon btn-trigger btn-warning" >
+                                                    <em class="icon ni ni-pen"></em>
+                                                </a>
+                                            </li>
+                                          
+                                        </ul>
+                                    </div>
+                                </div>
+ 
+                                <!-- .nk-tb-item -->
+                            </div>
+                            <!-- .nk-tb-list -->
+                        </div>
+                        <!-- .card-inner -->
+                        <div class="card-inner">
+                            <ul class="pagination justify-content-center justify-content-md-start">
+                                <li class="page-item"><a class="page-link">Prev</a></li>
+                                <li class="page-item"><a class="page-link">1</a></li>
+                                <li class="page-item"><a class="page-link">2</a></li>
+                                <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
+                                <li class="page-item"><a class="page-link">6</a></li>
+                                <li class="page-item"><a class="page-link">7</a></li>
+                                <li class="page-item"><a class="page-link">Next</a></li>
+                            </ul>
+                            <!-- .pagination -->
+                        </div>
+                        <!-- .card-inner -->
+                    </div>
+                    <!-- .card-inner-group -->
+                </div>
+                <!-- .card -->
+            </div>
+            <!-- .nk-block -->
+        </div>
+    </div>
+</div>
